@@ -1,0 +1,40 @@
+{
+  "name": "react-native-slide-to-unlock",
+  "version": "0.1.0",
+  "description": "A small button component inspired by old iPhone's feature 'slide to unlock'.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gutioliveira/react-native-slide-to-unlock.git"
+  },
+  "keywords": [
+    "slider",
+    "button",
+    "slide",
+    "to",
+    "unlock",
+    "react",
+    "native"
+  ],
+  "author": "Gustavo Cavalcante",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gutioliveira/react-native-slide-to-unlock/issues"
+  },
+  "dependencies": {
+    "typy": "3.0.1"
+  },
+  "devDependencies": {
+    "react": "^16.6.3",
+    "react-native": "^0.58.4",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.1.0",
+    "jest": "^24.1.0",
+    "metro-react-native-babel-preset": "^0.51.1",
+    "react-test-renderer": "^16.6.3"
+  },
+  "homepage": "https://github.com/gutioliveira/react-native-slide-to-unlock#readme"
+}
