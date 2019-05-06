@@ -29,13 +29,13 @@ export default class Slider extends Component {
       },
       onPanResponderMove: (evt, gestureState) => {
         if(!this.props.disableSliding) {
-        const margin = this.totalWidth - this.state.squareWidth * 1.025;
-        if (gestureState.dx > 0 && gestureState.dx <= margin) {
-          this.setState({ offsetX: new Animated.Value(gestureState.dx) });
-        } else if (gestureState.dx > margin) {
-          this.onEndReached();
-          return;
-        }
+          const margin = this.totalWidth - this.state.squareWidth * 1.025;
+          if (gestureState.dx > 0 && gestureState.dx <= margin) {
+            this.setState({ offsetX: new Animated.Value(gestureState.dx) });
+          } else if (gestureState.dx > margin) {
+            this.onEndReached();
+            return;
+          }
         }
       },
       onPanResponderTerminationRequest: (evt, gestureState) => true,
