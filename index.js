@@ -28,12 +28,14 @@ export default class Slider extends Component {
         this.canReachEnd = true;
       },
       onPanResponderMove: (evt, gestureState) => {
+        if(!this.props.disableSliding) {
         const margin = this.totalWidth - this.state.squareWidth * 1.025;
         if (gestureState.dx > 0 && gestureState.dx <= margin) {
           this.setState({ offsetX: new Animated.Value(gestureState.dx) });
         } else if (gestureState.dx > margin) {
           this.onEndReached();
           return;
+        }
         }
       },
       onPanResponderTerminationRequest: (evt, gestureState) => true,
@@ -91,6 +93,7 @@ Slider.propTypes = {
   containerStyle: PropTypes.object,
   sliderElement: PropTypes.element,
   onEndReached: PropTypes.func,
+  disableSliding: PropTypes.bool,
 };
 
 Slider.defaultProps = {
@@ -98,4 +101,5 @@ Slider.defaultProps = {
   containerStyle: {},
   sliderElement: <View style={{ width: 50, height: 50, backgroundColor: 'green' }} />,
   onEndReached: () => {},
+  disableSliding: false
 };
