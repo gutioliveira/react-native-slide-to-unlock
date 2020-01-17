@@ -1,6 +1,6 @@
 {
   "name": "react-native-slide-to-unlock",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A small button component inspired by old iPhone's feature 'slide to unlock'.",
   "main": "index.js",
   "scripts": {
