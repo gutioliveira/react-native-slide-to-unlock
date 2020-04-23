@@ -31,7 +31,7 @@ export default class Slider extends Component {
         if(!this.props.disableSliding) {
           const margin = this.totalWidth - this.state.squareWidth * 1.025;
           if (gestureState.dx > 0 && gestureState.dx <= margin) {
-            this.setState({ offsetX: new Animated.Value(gestureState.dx) });
+            this.state.offsetX.setValue(gestureState.dx)
           } else if (gestureState.dx > margin) {
             this.onEndReached();
             return;
@@ -54,7 +54,7 @@ export default class Slider extends Component {
   };
 
   resetBar() {
-    Animated.timing(this.state.offsetX, { toValue: 0 }).start();
+    Animated.timing(this.state.offsetX, { toValue: 0, useNativeDriver: true }).start();
   }
 
   render() {
