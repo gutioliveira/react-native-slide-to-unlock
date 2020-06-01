@@ -31,6 +31,7 @@ Example usage and props! They're self explaining.
     overflow: 'hidden',
     alignItems: 'center',
     justifyContent: 'center',
+    width: '95%'
   }}
   sliderElement={
     <Image
@@ -51,4 +52,20 @@ Example usage and props! They're self explaining.
   <Text>{'SLIDE TO UNLOCK'}</Text>
 </Slider>
 ```
+
+# Contributing
+Feel free to contribute to this project at any time. Fixing issues or developing new features.
+Just a small example on how to contribute on this project.
+
+```
+cd yourReactNativeProject
+git clone https://github.com/gutioliveira/react-native-slide-to-unlock.git  ./yourComponentsFolder/react-native-slide-to-unlock
+```
+import it from your project
+
+```jsx
+import Slider from './yourComponentsFolder/react-native-slide-to-unlock';
+```
+
+start hacking and after you're done, submit your pull request.
 
