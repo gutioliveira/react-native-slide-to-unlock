@@ -25,6 +25,7 @@ export default class Slider extends Component {
         return true;
       },
       onPanResponderGrant: (evt, gestureState) => {
+        this.onSlideStart();
         this.canReachEnd = true;
       },
       onPanResponderMove: (evt, gestureState) => {
@@ -39,7 +40,11 @@ export default class Slider extends Component {
         }
       },
       onPanResponderTerminationRequest: (evt, gestureState) => true,
+      onPanResponderTerminate: (evt, gestureState) => {
+        this.onSlideEnd(); 
+      },
       onPanResponderRelease: (evt, gestureState) => {
+        this.onSlideEnd();
         this.resetBar();
         this.canReachEnd = true;
       },
@@ -51,6 +56,14 @@ export default class Slider extends Component {
     this.canReachEnd && this.props.onEndReached();
     this.canReachEnd = false;
     this.resetBar();
+  };
+
+  onSlideStart = () => {
+    this.props.onSlideStart();
+  };
+
+  onSlideEnd = () => {
+    this.props.onSlideEnd();
   };
 
   resetBar() {
@@ -93,6 +106,8 @@ Slider.propTypes = {
   containerStyle: PropTypes.object,
   sliderElement: PropTypes.element,
   onEndReached: PropTypes.func,
+  onSlideStart: PropTypes.func,
+  onSlideEnd: PropTypes.func,
   disableSliding: PropTypes.bool,
 };
 
@@ -101,5 +116,7 @@ Slider.defaultProps = {
   containerStyle: {},
   sliderElement: <View style={{ width: 50, height: 50, backgroundColor: 'green' }} />,
   onEndReached: () => {},
+  onSlideStart: () => {},
+  onSlideEnd: () => {},
   disableSliding: false
 };
