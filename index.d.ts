@@ -3,6 +3,8 @@ declare module 'react-native-slide-to-unlock' {
   interface ButtonProps {
     childrenContainer?: any,
     onEndReached: () => void,
+    onSlideStart: () => void,
+    onSlideEnd: () => void,
     containerStyle?: any,
     sliderElement?: ReactNode,
     disableSliding?: boolean,
